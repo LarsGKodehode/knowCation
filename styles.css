@@ -31,6 +31,7 @@ p {
   letter-spacing: -4%;
 }
 
+/* should probably move this to its own element */
 details {
   font-size: 10px;
   letter-spacing: -2%;
@@ -40,28 +41,28 @@ details {
 /* PALETTE
  - Summer
 */
-:root {
+body[data-theme = "summer"] {
   /* Main colors */
-  --palette-summer-1: #CDBE37;
-  --palette-summer-2: #AEEEFD;
-  --palette-summer-3: #FFED5B;
-  --palette-summer-4: #FC9AB9;
-  --palette-summer-5: #F84F98;
+  --palette-1: #CDBE37;
+  --palette-2: #AEEEFD;
+  --palette-3: #FFED5B;
+  --palette-4: #FC9AB9;
+  --palette-5: #F84F98;
 
   /* Text colors */
-  --palette-summer-1-text: #030E27;
-  --palette-summer-2-text: #030E27;
-  --palette-summer-3-text: #030E27;
-  --palette-summer-4-text: #071D52;
-  --palette-summer-5-text: #071D52;
+  --palette-1-text: #030E27;
+  --palette-2-text: #030E27;
+  --palette-3-text: #030E27;
+  --palette-4-text: #071D52;
+  --palette-5-text: #071D52;
 
   /* Button colors */
-  --palette-summer-interactive-neutral: #32D8D8;
-  --palette-summer-interactive-neutral-text: #272F2F;
+  --palette-interactive-neutral: #32D8D8;
+  --palette-interactive-neutral-text: #272F2F;
 
-  --palette-summer-interactive-warning: #D3071F;
-  --palette-summer-interactive-warning-text: #B9E7DA;
+  --palette-interactive-warning: #D3071F;
+  --palette-interactive-warning-text: #B9E7DA;
 
-  --palette-summer-interactive-subbmit: #2CFF5B;
-  --palette-summer-interactive-subbmit-text: #00070C;
+  --palette-interactive-subbmit: #2CFF5B;
+  --palette-interactive-subbmit-text: #00070C;
 }
