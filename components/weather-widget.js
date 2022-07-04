@@ -1,8 +1,4 @@
 const weatherWidget = (createInfo) => {
-  // ===== Public Members =====
-  let weatherForecast = []; // location to store gathered weather data
-
-  
   // ===== Public Methods =====
   /**
    * Updates internal weather forecast
@@ -11,22 +7,24 @@ const weatherWidget = (createInfo) => {
     weatherForecast = await getWeatherForecast();
   };
 
-  /**
-   * @returns internaly stored weatherforecast
+  /** [{time:, temperature:, cloudCoverage:}]
+   * @return {Array} internaly stored weatherforecast for the next 80 hours
    */
   function getForecast() {
     return weatherForecast;
   };
 
-
   // ===== Private Members =====
+  // creation info
   const location = createInfo.location;
   const coordinates = createInfo.coordinates;
   requiredFields(); // extracted guard clauses into own function
+  // updating fields
+  let weatherForecast = []; // location to store gathered weather data
 
 
   // ===== Private Methods =====
-  // checks if all createInfo required fields are present
+  // checks if all createInfo required fields are up to scratch
   function requiredFields(createInfo) {
     if(location === undefined) {
       console.warn(`Need a name for location`)
