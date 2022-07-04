@@ -1,0 +1,67 @@
+/* 
+CONTENT:
+  - Typography
+  - Palette
+*/
+
+/* TYPOGRAPHY */
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans&family=Quantico&display=swap');
+
+* {
+  font-family: 'Encode Sans', sans-serif;
+}
+
+h1 {
+  font-size: 68px;
+  letter-spacing: -3%;
+}
+
+h2 {
+  font-size: 42px;
+  letter-spacing: -2%;
+}
+
+h3 {
+  font-size: 26px;
+  letter-spacing: -3.5%;
+}
+
+p {
+  font-size: 16px;
+  letter-spacing: -4%;
+}
+
+details {
+  font-size: 10px;
+  letter-spacing: -2%;
+}
+
+
+/* PALETTE
+ - Summer
+*/
+:root {
+  /* Main colors */
+  --palette-summer-1: #CDBE37;
+  --palette-summer-2: #AEEEFD;
+  --palette-summer-3: #FFED5B;
+  --palette-summer-4: #FC9AB9;
+  --palette-summer-5: #F84F98;
+
+  /* Text colors */
+  --palette-summer-1-text: #030E27;
+  --palette-summer-2-text: #030E27;
+  --palette-summer-3-text: #030E27;
+  --palette-summer-4-text: #071D52;
+  --palette-summer-5-text: #071D52;
+
+  /* Button colors */
+  --palette-summer-interactive-neutral: #32D8D8;
+  --palette-summer-interactive-neutral-text: #272F2F;
+
+  --palette-summer-interactive-warning: #D3071F;
+  --palette-summer-interactive-warning-text: #B9E7DA;
+
+  --palette-summer-interactive-subbmit: #2CFF5B;
+  --palette-summer-interactive-subbmit-text: #00070C;
+}
