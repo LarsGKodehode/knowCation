@@ -1,16 +1,17 @@
 const weatherWidget = (createInfo) => {
   // ===== Public Methods =====
-  /**
-   * Updates internal weather forecast
-   */
-  async function updateForecast() {
-    weatherForecast = await getWeatherForecast();
-  };
 
   /** [{time:, temperature:, cloudCoverage:}]
    * @return {Array} internaly stored weatherforecast for the next 80 hours
    */
-  function getForecast() {
+  async function getForecast(options = false) {
+    if(weatherForecast.length === 0) { // check if we have data
+      weatherForecast = await getWeatherForecast();
+    };
+
+    // #DEV_LOGGING"
+    if(options.DEV_LOG) {console.log(weatherForecast)};
+
     return weatherForecast;
   };
 
@@ -48,7 +49,7 @@ const weatherWidget = (createInfo) => {
 
     // API endpoint
     const url = `https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${coordinates.latitude}&lon=${coordinates.longitude}`;
-    // Header to send with external API request
+    // Header to send with request
     const header = new Headers({
       "User-Agent": navigator.userAgent,
       "cache": "force-cache",
@@ -81,7 +82,6 @@ const weatherWidget = (createInfo) => {
   // returned handles
   return {
     getForecast,
-    updateForecast,
   };
 };
 

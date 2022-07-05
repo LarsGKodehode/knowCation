@@ -12,10 +12,11 @@ const weatherOutput = weatherWidget({
 // ===== DEVELOPMENT STUFF =====
 const buttonRefreshWeather = document.getElementById("refresh-weather");
 buttonRefreshWeather.addEventListener("click", (e) => {
-  weatherOutput.updateForecast();
+  console.log(`this button is not working yet`);
 });
 
 const buttonDevLog = document.getElementById("dev-log");
-buttonDevLog.addEventListener("click", () => {
-  console.log(weatherOutput.getForecast());
+buttonDevLog.addEventListener("click", async () => {
+  const newCast = await weatherOutput.getForecast();
+  console.log(newCast);
 });
