@@ -44,6 +44,7 @@ const weatherWidget = (createInfo) => {
   
   // gets new weather data
   async function getWeatherForecast() {
+    console.warn(`retriving new forecast from "Meteorologisk institutt" servers`);
     // place to store retrived data
     let newForecast = [];
 

@@ -6,57 +6,97 @@ const DEBUG_FLAGS = {
   "DEBUG_LOG": false,
 };
 
+const APP_OPTIONS = {
+  ...DEBUG_FLAGS,
+  transitionDelay: 10000,
+}
+
 // page targets
 const target = {
   mainContainer: document.getElementById("main-container"),
   mainTitle: document.getElementById("main-title"),
+  mainTemperature: document.getElementById("temperature"),
   mainDescription: document.getElementById("main-description"),
 };
 
 // run site
-initializePage(DEBUG_FLAGS);
-
-// NOT IN USE AT THE MOMEMT
-const weatherOutput = weatherWidget({
-  "location": "Stavanger",
-  "coordinates": {"latitude": 58.963333, "longitude": 5.718889},
-});
-
+initializePage(APP_OPTIONS);
 
 
 // ===== MAIN =====
-async function initializePage(options = false) {
+async function initializePage(OPTIONS = false) {
   // Fetch location list
   const locations = await ExternalGrabber.fetchResource("/data/cargoManifest.json");
-  if(options.DEBUG_LOG) {
+
+  if(OPTIONS.DEBUG_LOG) {
     console.log(`Locations list:`);
     console.dir(locations);
   };
+
 
   // Fetch data for all the locations
   let locationData = await Promise.all(locations.map( async (location) => {
     return await ExternalGrabber.fetchResource(location.resources);
   }));
-  if(options.DEBUG_LOG) {
+
+  if(OPTIONS.DEBUG_LOG) {
     console.log(`Locations data:`);
     console.dir(locationData);
   };
 
-  // TODO: skipping for now
+
   // append weather data to instances
-  // for( const entry of locationData) {
-  //   console.log(entry);
-  // };
-  // if(options.DEBUG_LOG) {
-  //   console.log(`Locations data:`);
-  //   console.dir(locationData);
-  // };
+  locationData.forEach(async (entry) => {
+    const locationWeather = weatherWidget({
+      location: entry.name,
+      coordinates: entry.coordinates,
+    })
+    const newCast = await locationWeather.getForecast();
+    entry.weather = newCast[0];
+  });
+
+  if(OPTIONS.DEBUG_LOG) {
+    console.log(`Locations weather appended:`);
+    console.dir(locationData);
+  };
+
 
   // render grabbed data
-  const cardData = locationData[0].cards[1];
+  const cardAlternatives = locationData[0].cards.length;
+  let currentCard = 0;
+
+  // draws a new location
+  newLocation(locationData[0], 0);
+  setInterval(() => {
+    newLocation(locationData[0], currentCard);
+    if(currentCard < (cardAlternatives - 1)) {
+      currentCard++;
+    } else {
+      currentCard = 0;
+    };
+  }, OPTIONS.transitionDelay);
+};
+
+
+
+
+// ===== HELPERS =====
+function setCSS(element, style) {
+  for (const property in style)
+      element.style[property] = style[property];
+};
+
+function newLocation(location, cardNumber) {
+  // render grabbed data
+  const cardData = location.cards[cardNumber];
 
   // insert title
-  target.mainTitle.textContent = locationData[0].name;
+  target.mainTitle.textContent = location.name;
+
+  // insert current temperature, don't do it before we actually have the data
+  if(location.weather !== undefined) {
+    target.mainTemperature.textContent = `${location.weather.temperature} ℃`;
+  };
 
   // attach image
   /**
@@ -72,24 +112,23 @@ async function initializePage(options = false) {
 
   // attach short descriptive hook
   target.mainDescription.textContent = cardData.description;
-
 };
 
-// ===== HELPERS =====
-function setCSS(element, style) {
-  for (const property in style)
-      element.style[property] = style[property];
-};
 
 
 // ===== DEVELOPMENT STUFF =====
 const buttonRefreshWeather = document.getElementById("refresh-weather");
 buttonRefreshWeather.addEventListener("click", (e) => {
+  console.log(`this button does not work either`);
+});
+
+const buttonCallToArms = document.getElementById("call-to-arms");
+buttonCallToArms.addEventListener("click", (e) => {
   console.log(`this button is not working yet`);
 });
 
 const buttonDevLog = document.getElementById("dev-log");
 buttonDevLog.addEventListener("click", async () => {
   const newCast = await weatherOutput.getForecast();
-  console.log(newCast);
+  console.dir(newCast);
 });

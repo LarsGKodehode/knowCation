@@ -44,12 +44,22 @@ ul {
   height: 100%;
 
   background-color: cornflowerblue;
+
+  /* animation */
+  transition: all 1000ms;
 }
 
 #main-container > h1 {
   /* placement in grid */
   grid-column: 2 / 3;
   grid-row: 1 / 2;
+}
+
+#main-container > h3 {
+  /* placement */
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  text-align: end;
 }
 
 #main-container > p {
