@@ -1,0 +1,15 @@
+{
+  "name": "Stavanger",
+  "coordinates": {"latitude": 58.963333, "longitude": 5.718889},
+  "type": "city",
+  "cards": [
+    {
+      "description": "Street market open to all. All the natives sit here and drink traditional, homebrewn ales.",
+      "image": "./data/images/stavanger_image_1.jpg"
+    },
+    {
+      "description": "Providing the most exquisite juxtaposition of depthless fjords and soaring mountains.",
+      "image": "./data/images/stavanger_image_2.jpg"
+    }
+  ]
+}

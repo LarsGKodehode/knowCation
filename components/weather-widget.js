@@ -47,12 +47,11 @@ const weatherWidget = (createInfo) => {
     // place to store retrived data
     let newForecast = [];
 
-    // API endpoint
+    // API endpoint for Norways "Meteorologisk institutt"
     const url = `https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${coordinates.latitude}&lon=${coordinates.longitude}`;
     // Header to send with request
     const header = new Headers({
-      "User-Agent": navigator.userAgent,
-      "cache": "force-cache",
+      "User-Agent": navigator.userAgent, 
     });
   
     // fetch and parse

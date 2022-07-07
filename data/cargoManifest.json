@@ -1,0 +1,8 @@
+[
+  {
+    "name": "stavanger",
+    "resources": [
+      "./data/stavanger.json"
+    ]
+  }
+]
