@@ -3,7 +3,7 @@ import { ExternalGrabber } from "./components/utility.js";
 
 // Debug flags
 const DEBUG_FLAGS = {
-  "DEBUG_LOG": true,
+  "DEBUG_LOG": false,
 };
 
 // page targets
@@ -12,12 +12,11 @@ const target = {
   mainTitle: document.getElementById("main-title"),
   mainDescription: document.getElementById("main-description"),
 };
-console.log(target)
 
 // run site
 initializePage(DEBUG_FLAGS);
 
-// create instance for Stavanger
+// NOT IN USE AT THE MOMEMT
 const weatherOutput = weatherWidget({
   "location": "Stavanger",
   "coordinates": {"latitude": 58.963333, "longitude": 5.718889},
@@ -72,7 +71,7 @@ async function initializePage(options = false) {
   });
 
   // attach short descriptive hook
-  target.mainDescription.textContent = cardData.description;g
+  target.mainDescription.textContent = cardData.description;
 
 };
 

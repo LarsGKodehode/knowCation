@@ -11,29 +11,33 @@ CONTENT:
   font-family: 'Encode Sans', sans-serif;
 }
 
+:root {
+  --font-size: 4vw;
+}
+
 h1 {
-  font-size: 68px;
+  font-size: calc(var(--font-size) * 8/4);
   letter-spacing: -3%;
 }
 
 h2 {
-  font-size: 42px;
+  font-size: calc(var(--font-size) * 7/4);
   letter-spacing: -2%;
 }
 
 h3 {
-  font-size: 26px;
+  font-size: calc(var(--font-size) * 5/4);
   letter-spacing: -3.5%;
 }
 
 p {
-  font-size: 16px;
+  font-size: calc(var(--font-size) * 2/4);
   letter-spacing: -4%;
 }
 
 /* should probably move this to its own element */
 details {
-  font-size: 10px;
+  font-size: calc(var(--font-size) * 1/4);
   letter-spacing: -2%;
 }
 
@@ -65,4 +69,7 @@ body[data-theme = "summer"] {
 
   --palette-interactive-subbmit: #2CFF5B;
   --palette-interactive-subbmit-text: #00070C;
+
+  --palette-interactive-buy: #719EFD;
+  --palette-interactive-buy-text: #141414;
 }
