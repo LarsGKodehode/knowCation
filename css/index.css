@@ -47,9 +47,6 @@ ul {
   height: 100%;
 
   background-color: cornflowerblue;
-
-  /* animation */
-  transition: all 1000ms;
 }
 
 #heading-background {
@@ -148,5 +145,4 @@ ul {
 
   background: rgb(32,32,68);
   background: linear-gradient(0deg, rgba(32,32,68,1) 23%, rgba(24,73,148,0.9976365546218487) 55%, rgba(81,133,212,0.9976365546218487) 90%);
-  /* background-color: var(--palette-interactive-buy); */
 }

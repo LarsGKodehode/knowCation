@@ -8,7 +8,7 @@ const DEBUG_FLAGS = {
 
 const APP_OPTIONS = {
   ...DEBUG_FLAGS,
-  transitionDelay: 2000,
+  transitionDelay: 10000,
 }
 
 // page targets
@@ -64,11 +64,11 @@ async function initializePage(OPTIONS = false) {
     };
   }, OPTIONS.transitionDelay);
 
-
-  /* TODO: New lopping formula
-  console.log(`new looping formula`)
-  for(entry of locationData) {
-    console.dir(entry)
+  /* TODO: include more than first element in cargoManifest.json
+  console.log(`new looping formula`);
+  console.dir(locations);
+  for(entry in locations) {
+    console.log(entry);
     // set location name
     // set location temprature
 
