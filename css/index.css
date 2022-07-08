@@ -1,0 +1,148 @@
+/* 
+CONTENT:
+ - Defaults
+ - Nav bar
+ - Main Container
+ - Buttons
+
+*/
+
+/* ===== DEFAULTS ===== */
+* {
+  box-sizing: border-box;
+  color: #D7A739;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  display: inline-flex;
+}
+
+.glass-smoked {
+  /* FIGMA COPY/PASTA */
+  background: rgba(87, 87, 87, 0.8);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5), inset 0px 10px 6px rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(7px);
+}
+
+/* ===== MAIN CONTAINER ===== */
+#main-container {  
+  /* content display */
+  display: grid;
+  grid-template-columns: 1fr 5fr 5fr 1fr;
+  grid-template-rows: 1fr 10fr 1fr;
+  
+  justify-content: space-between;
+  align-items: flex-end;
+
+  box-sizing: border-box;
+  max-width: 100vw;
+  height: 100%;
+
+  background-color: cornflowerblue;
+}
+
+#heading-background {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+
+  margin: 0;
+
+  width: 100vw;
+  height: 100%;
+}
+
+#main-container > h1 {
+  /* placement in grid */
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+
+  z-index: 1;
+}
+
+#main-container > h3 {
+  /* placement */
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  text-align: end;
+
+  z-index: 1;
+}
+
+#main-container > p {
+  /* placement in grid */
+  grid-column: 1 / -1;
+  grid-row: 2/ 3;
+
+  /* size */
+  width: 100%;
+  height: min-content;
+
+  /* form */
+  padding: 2em;
+
+  /* hide away owerflow */
+  overflow-y: hidden;
+}
+
+#button-wrapper {
+  /* placement in grid */
+  grid-column: 2 / 4;
+  grid-row: 3 / 4;
+
+  /* form */
+  width: 100%;
+  height: 100%;
+
+  /* content display */
+  display: flex;
+  justify-content: center;
+}
+
+#button-wrapper > ul {
+  /* content display */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* ===== BUTTONS ===== */
+.button {
+  /* font-size: calc(var(--font-size) * 4/4); */
+  background-color: var(--palette-interactive-neutral);
+
+  /* shape */
+  border-radius: 2rem;
+  padding: .25em .5em;
+  margin: 1em;
+
+  /* animation */
+  transition: all 50ms ease-in;
+}
+@media (any-hover) {
+  .button:hover {
+    outline: 4px ridge rgba(167, 152, 174, 0.6);
+  }
+}
+.button:active {
+  outline: 4px ridge rgba(167, 152, 174, 0.6);
+  box-shadow: inset 2px 2px 4px black;
+
+  transform: translateY(1px);
+}
+
+.buy {
+  padding-left: 4em;
+  padding-right: 4em;
+
+  background: rgb(32,32,68);
+  background: linear-gradient(0deg, rgba(32,32,68,1) 23%, rgba(24,73,148,0.9976365546218487) 55%, rgba(81,133,212,0.9976365546218487) 90%);
+}

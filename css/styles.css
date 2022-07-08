@@ -1,0 +1,75 @@
+/* 
+CONTENT:
+  - Typography
+  - Palette
+*/
+
+/* TYPOGRAPHY */
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans&family=Quantico&display=swap');
+
+* {
+  font-family: 'Encode Sans', sans-serif;
+}
+
+:root {
+  --font-size: 16px;
+}
+
+h1 {
+  font-size: calc(var(--font-size) * 8/4);
+  letter-spacing: -3%;
+}
+
+h2 {
+  font-size: calc(var(--font-size) * 7/4);
+  letter-spacing: -2%;
+}
+
+h3 {
+  font-size: calc(var(--font-size) * 5/4);
+  letter-spacing: -3.5%;
+}
+
+p {
+  font-size: calc(var(--font-size) * 4/4);
+  letter-spacing: -4%;
+}
+
+/* should probably move this to its own element */
+details {
+  font-size: calc(var(--font-size) * 1/4);
+  letter-spacing: -2%;
+}
+
+
+/* PALETTE
+ - Summer
+*/
+body[data-theme = "summer"] {
+  /* Main colors */
+  --palette-1: #CDBE37;
+  --palette-2: #AEEEFD;
+  --palette-3: #FFED5B;
+  --palette-4: #FC9AB9;
+  --palette-5: #F84F98;
+
+  /* Text colors */
+  --palette-1-text: #030E27;
+  --palette-2-text: #030E27;
+  --palette-3-text: #030E27;
+  --palette-4-text: #071D52;
+  --palette-5-text: #071D52;
+
+  /* Button colors */
+  --palette-interactive-neutral: #32D8D8;
+  --palette-interactive-neutral-text: #272F2F;
+
+  --palette-interactive-warning: #D3071F;
+  --palette-interactive-warning-text: #B9E7DA;
+
+  --palette-interactive-subbmit: #2CFF5B;
+  --palette-interactive-subbmit-text: #00070C;
+
+  --palette-interactive-buy: #4371d6;
+  --palette-interactive-buy-text: #141414;
+}
