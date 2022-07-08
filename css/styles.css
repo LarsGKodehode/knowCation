@@ -12,7 +12,7 @@ CONTENT:
 }
 
 :root {
-  --font-size: 4vw;
+  --font-size: 16px;
 }
 
 h1 {
@@ -70,6 +70,6 @@ body[data-theme = "summer"] {
   --palette-interactive-subbmit: #2CFF5B;
   --palette-interactive-subbmit-text: #00070C;
 
-  --palette-interactive-buy: #719EFD;
+  --palette-interactive-buy: #4371d6;
   --palette-interactive-buy-text: #141414;
 }

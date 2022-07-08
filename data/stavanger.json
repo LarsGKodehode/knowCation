@@ -10,6 +10,10 @@
     {
       "description": "Providing the most exquisite juxtaposition of depthless fjords and soaring mountains.",
       "image": "./data/images/stavanger_image_2.jpg"
+    },
+    {
+      "description": "Join the locals every laugardag for a refreshing bath, the only day when washing is allowed.",
+      "image": "https://images.unsplash.com/photo-1609864485908-30999e862612?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
     }
   ]
 }

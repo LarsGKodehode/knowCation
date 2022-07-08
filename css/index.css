@@ -10,6 +10,7 @@ CONTENT:
 /* ===== DEFAULTS ===== */
 * {
   box-sizing: border-box;
+  color: #D7A739;
 }
 
 html, body {
@@ -26,7 +27,7 @@ ul {
 
 .glass-smoked {
   /* FIGMA COPY/PASTA */
-  background: rgba(87, 87, 87, 0.4);
+  background: rgba(87, 87, 87, 0.8);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5), inset 0px 10px 6px rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(7px);
 }
@@ -54,6 +55,8 @@ ul {
 #heading-background {
   grid-column: 1 / -1;
   grid-row: 1 / 2;
+
+  margin: 0;
 
   width: 100vw;
   height: 100%;
@@ -93,11 +96,17 @@ ul {
 }
 
 #button-wrapper {
-  grid-column: 1 / 4;
+  /* placement in grid */
+  grid-column: 2 / 4;
   grid-row: 3 / 4;
 
+  /* form */
   width: 100%;
   height: 100%;
+
+  /* content display */
+  display: flex;
+  justify-content: center;
 }
 
 #button-wrapper > ul {
@@ -110,27 +119,24 @@ ul {
 
 /* ===== BUTTONS ===== */
 .button {
-  font-size: calc(var(--font-size) * 6/4);
+  /* font-size: calc(var(--font-size) * 4/4); */
   background-color: var(--palette-interactive-neutral);
-  color: var(--palette-interactive-neutral-text);
 
   /* shape */
-  border-radius: 15px;
+  border-radius: 2rem;
   padding: .25em .5em;
   margin: 1em;
 
   /* animation */
-  transition: all 100ms ease-in;
+  transition: all 50ms ease-in;
 }
 @media (any-hover) {
   .button:hover {
     outline: 4px ridge rgba(167, 152, 174, 0.6);
-    border-radius: 2rem;
   }
 }
 .button:active {
   outline: 4px ridge rgba(167, 152, 174, 0.6);
-  border-radius: 2rem;
   box-shadow: inset 2px 2px 4px black;
 
   transform: translateY(1px);
@@ -140,9 +146,7 @@ ul {
   padding-left: 4em;
   padding-right: 4em;
 
-  background-color: var(--palette-interactive-buy);
-  color: var(--palette-interactive-buy-text);
+  background: rgb(32,32,68);
+  background: linear-gradient(0deg, rgba(32,32,68,1) 23%, rgba(24,73,148,0.9976365546218487) 55%, rgba(81,133,212,0.9976365546218487) 90%);
+  /* background-color: var(--palette-interactive-buy); */
 }
-
-         
-/* ===== COPY/PASTA WEB ===== */

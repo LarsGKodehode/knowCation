@@ -1,0 +1,11 @@
+{
+  "name": "Bergen",
+  "coordinates": {"latitude": 60.389444, "longitude": 5.33},
+  "type": "city",
+  "cards": [
+    {
+      "description": "All roads leads to Bergen. And from bergen everything is but a mountain away",
+      "image": "https://images.unsplash.com/photo-1543928155-aa340e382658?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80"
+    }
+  ]
+}
