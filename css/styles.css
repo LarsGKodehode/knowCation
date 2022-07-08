@@ -31,7 +31,7 @@ h3 {
 }
 
 p {
-  font-size: calc(var(--font-size) * 2/4);
+  font-size: calc(var(--font-size) * 4/4);
   letter-spacing: -4%;
 }
 
