@@ -9,6 +9,7 @@ const DEBUG_FLAGS = {
 const APP_OPTIONS = {
   ...DEBUG_FLAGS,
   transitionDelay: 10000,
+  cargoManifest_PATH: "./data/cargoManifest.json",
 }
 
 // page targets
@@ -26,7 +27,7 @@ initializePage(APP_OPTIONS);
 // ===== MAIN =====
 async function initializePage(OPTIONS = false) {
   // Fetch location manifest
-  const locations = await ExternalGrabber.fetchResource("/data/cargoManifest.json");
+  const locations = await ExternalGrabber.fetchResource(OPTIONS.cargoManifest_PATH);
   if(OPTIONS.DEBUG_LOG) {console.log(`Locations list:`);console.dir(locations)};
 
 
