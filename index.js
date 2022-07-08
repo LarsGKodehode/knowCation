@@ -9,7 +9,7 @@ const DEBUG_FLAGS = {
 const APP_OPTIONS = {
   ...DEBUG_FLAGS,
   transitionDelay: 10000,
-  PATH_MANIFEST: "./data/cargoManifest.json",
+  PATH_MANIFEST: "data/cargoManifest.json",
 }
 
 // page targets
