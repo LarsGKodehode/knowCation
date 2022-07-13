@@ -23,6 +23,7 @@ html, body {
 ul {
   list-style-type: none;
   display: inline-flex;
+  padding: 0;
 }
 
 .glass-smoked {
